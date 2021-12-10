@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tarea sincronica m2c1</title>
+</head>
+<body>
+	<h3>Tarea Sincronica M2C1</h3>
+	<p>valor 1:<input type="text" name="n1" id="v1"></p>
+	<p>valor 2:<input type="text" name="n2" id="v2"></p>
+	<p>resultado: <input type="text" name="res" id="res"></p>
+	<p id="op"></p>
+	<button onclick="suma();">suma</button>
+	<button onclick="resta();">resta</button>
+	<button onclick="mult();">multiplicacion</button>
+	<button onclick="divi();">division</button>
+
+	<script type="text/javascript">
+
+		function suma(){
+			let v1=document.getElementById('v1').value;
+			let v2=document.getElementById('v2').value;
+			let vv1=parseInt(v1,10);
+			let vv2=parseInt(v2,10);
+			let res=vv1+vv2;
+			document.getElementById('res').value=res;
+			document.getElementById('op').innerHTML="suma";
+
+		}
+		function resta(){
+			let v1=document.getElementById('v1').value;
+			let v2=document.getElementById('v2').value;
+			let vv1=parseInt(v1,10);
+			let vv2=parseInt(v2,10);
+			let res=vv1-vv2;
+			document.getElementById('res').value=res;
+			document.getElementById('op').innerHTML="resta";
+
+		}
+		function mult(){
+			let v1=document.getElementById('v1').value;
+			let v2=document.getElementById('v2').value;
+			let vv1=parseInt(v1,10);
+			let vv2=parseInt(v2,10);
+			let res=vv1*vv2;
+			document.getElementById('res').value=res;
+			document.getElementById('op').innerHTML="multiplicacion";
+		}
+		function divi(){
+			let v1=document.getElementById('v1').value;
+			let v2=document.getElementById('v2').value;
+			let vv1=parseInt(v1,10);
+			let vv2=parseInt(v2,10);
+			let res=vv1/vv2;
+			document.getElementById('res').value=res;
+			document.getElementById('op').innerHTML="division";
+		}
+	</script>
+</body>
+</html>
+<!-- Tarea en clase:
+Se pide implementar una página web donde ustedes agreguen script de Java para operar 2 valores y entregue el resultado de las 4 operaciones básicas con esos 2 valores. Estos 2 valores deben ser ingresados en input de tipo texto y el resultado debe ser entregado en otro input del mismo tipo.
+-->
