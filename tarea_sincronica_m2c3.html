@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>tarea sincronica M2C3</title>
+</head>
+<body>
+	<h1>cálculo iva</h1>
+	monto:<input type="text" name="monto"
+	id="monto"><br>
+	<button onclick="total();">total</button>
+	<p id="respuesta1"></p>
+	<p id="respuesta2"></p>
+	<script type="text/javascript">
+		const iva={
+			siva:0.19,
+			miva:1.19
+		}
+		function total(){
+			let v=document.getElementById('monto').value;
+			let monto=parseInt(v,10);
+			document.getElementById('respuesta1').innerHTML="IVA : "+(monto*iva.siva);
+			document.getElementById('respuesta2').innerHTML="Total a pagar : "+(monto*iva.miva);
+		}
+
+
+	</script>
+
+</body>
+</html>
+<!--Clase 03 – M2C3
+Tarea en clase:
+Implemente una página web la cual contenga un formulario para el ingreso de un valor el cual será
+un monto bruto a cancelar. Una vez terminado este formulario deberá generar una funcionalidad
+JavaScript que calcule cual es el total a pagar, al momento de ingresarle un valor a pagar esta
+funcionalidad calculara cual es el IVA que debe agregarse y calculara cuanto es el total a pagar
+(implemente este cálculo usando el valor del IVA como constantes).
+monto de iva= monto*0.19
+total con iba agregado= monto*1.19 -->
