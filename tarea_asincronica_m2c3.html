@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>tarea asincronica m2c3</title>
+
+</head>
+<body>
+	<h1>porcentaje de montos</h1>
+	<table>
+		<tr>
+			<td>Ingrese un monto :</td>
+			<td><input type="text" name="monto" id="monto"></td>
+		</tr>
+		<tr>
+			<td>Ingrese porcentaje :</td>
+			<td><input type="text" name="porcentaje" id="porcentaje"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><button onclick="calcular();">calular porcentaje</button></td>
+		</tr>
+		<tr>
+			<td><p id="repuesta1"></p></td>
+		</tr>
+	</table>
+  		<p id="respuesta"></p>
+	<script type="text/javascript">
+		function calcular(){
+			let v1=document.getElementById("monto").value;
+			let v2=document.getElementById("porcentaje").value;
+			let monto=parseFloat(v1,10);
+			let porcentaje=parseFloat(v2,10);
+			let total=monto*porcentaje/100;
+			document.getElementById('respuesta').innerHTML="El "+porcentaje+"% de "+monto+" es :"+total;
+		}
+	</script>
+
+</body>
+</html>
+<!-- Clase 03 – M2C3
+Tarea asincrónica:
+En una página web nueva implemente un formulario el cual contenga 2 input para el ingreso de 2 valores, el
+primero será un monto cualquiera y el segundo el porcentaje que se desea obtener de ese valor.
+Posteriormente implemente una funcionalidad JavaScript la cual calcule a cuanto corresponde ese porcentaje
+del valor ingresado (implemente este ejercicio usando Let).
+Ejemplo:
+Valor 1: 500 (monto)
+Valor 2: 25(porcentaje que se desea saber)
+Resultado: 125(resultado el cual es el 25 % de 500)-->
