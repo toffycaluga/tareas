@@ -2,28 +2,32 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="widtg-device-width, initial-scale=1">
+	
+
 	<title>tarea asincronica m2c3</title>
 
 </head>
 <body>
-	<h1>porcentaje de montos</h1>
-	<table>
-		<tr>
-			<td>Ingrese un monto :</td>
-			<td><input type="text" name="monto" id="monto"></td>
-		</tr>
-		<tr>
-			<td>Ingrese porcentaje :</td>
-			<td><input type="text" name="porcentaje" id="porcentaje"></td>
-		</tr>
-		<tr>
-			<td colspan="2"><button onclick="calcular();">calular porcentaje</button></td>
-		</tr>
-		<tr>
-			<td><p id="repuesta1"></p></td>
-		</tr>
-	</table>
-  		<p id="respuesta"></p>
+
+		<h1 >porcentaje de montos</h1>
+		<table >
+			<tr>
+				<td>Ingrese un monto :</td>
+				<td><input type="text" name="monto" id="monto"></td>
+			</tr>
+			<tr>
+				<td>Ingrese porcentaje :</td>
+				<td><input type="text" name="porcentaje" id="porcentaje"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><button onclick="calcular();">calular porcentaje</button></td>
+			</tr>
+			<tr>
+				<td><p id="repuesta1"></p></td>
+			</tr>
+		</table>
+	  		<p id="respuesta"></p>
 	<script type="text/javascript">
 		function calcular(){
 			let v1=document.getElementById("monto").value;
