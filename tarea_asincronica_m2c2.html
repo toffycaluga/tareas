@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tarea asincronica m2c2</title>
+</head>
+<body>
+	<h1>Tarea Asincronica M2C2</h1>
+
+		Estatura :<input type="text" name="est" id="est"><br>
+		Peso     :<input type="text" name="peso" id="peso"><br>
+		<button onclick="imc();">Calcular IMC</button>
+		<p id="cont"></p>
+	
+	<script type="text/javascript">
+		function imc(){
+			let est=document.getElementById('est').value;
+			let peso=document.getElementById('peso').value;
+			let e1=parseFloat(est,10);
+			let p1=parseFloat(peso,10);
+			let imc=p1/(e1**2);
+			if (imc<=18.5) {
+				document.getElementById('cont').innerHTML="Su IMC es : "+imc+" usted esta bajo el nivel Normal";
+			}else if ( imc<=24.9)  {
+				document.getElementById('cont').innerHTML="Su IMC es : "+imc+" usted esta en el Rango de peso Normal.";
+			}else if ( imc<=29.9 ) {
+				document.getElementById('cont').innerHTML="Su IMC es : "+imc+" usted esta sobre peso";
+
+			}else if (imc>=30) {
+				document.getElementById('cont').innerHTML="Su IMC es : "+imc+" usted esta obeso";
+			}
+		}
+	</script>
+
+</body>
+</html>
+<!-- Clase 02 – M2C2
+Tarea asincrónica:
+En una nueva página web que ustedes desarrollen, implemente un formulario donde se ingresen 2 valores,
+primero la estatura y segundo el peso, de modo que con estos datos se pueda calcular el imc (índice de masa
+corporal).
+Dado el resultado de este cálculo muestre, evalúe en que categoría se encuentra el valor generado por este
+cálculo y muestre de la manera que usted estime conveniente el rango al cual pertenece.
+Fórmula para el cálculo del IMC
+IMC = peso [kg]/ estatura [m2]
+Rango de factores y categorías:
+Peso inferior al normal Menor 18.5
+Normal 18.5 24.9
+Peso superior al normal 25.0 29.9
+Obesidad 30.0 Mayor-->
