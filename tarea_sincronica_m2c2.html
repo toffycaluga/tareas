@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>tarea sincronica m2c2</title>
+</head>
+<body>
+	<h2>Cálculo de promedio</h2>
+	nota 1:<input type="text" name="nota1" id="n1"><br>
+	nota 2:<input type="text" name="nota2" id="n2"><br>
+	nota 3:<input type="text" name="nota3" id="n3"><br>
+	nota 4:<input type="text" name="nota4" id="n4"><br>
+	<button onclick="promedio()">calcular promedio</button>
+	<p id="cont"></p>
+	<script type="text/javascript">
+		function promedio(){
+			let n1=document.getElementById('n1').value;	
+			let n2=document.getElementById('n2').value;
+			let n3=document.getElementById('n3').value;
+			let n4=document.getElementById('n4').value;
+			let nn1=parseFloat(n1,10);
+			let nn2=parseFloat(n2,10);
+			let nn3=parseFloat(n3,10);
+			let nn4=parseFloat(n4,10);
+			let prom=(nn1+nn2+nn3+nn4)/4;
+			if (prom>=4) {
+				document.getElementById('cont').innerHTML="promedio :"+prom+" aprobado";
+			}else{
+				document.getElementById('cont').innerHTML="promedio :"+prom+" Reprobado";
+			}
+
+
+		}
+	</script>
+
+</body>
+</html>
+<!--Clase 02 – M2C2
+Tarea en clase:
+Genere un formulario donde se creen 4 input para que se ingresen 4 notas de un alumno, luego implemente
+una función javaScript donde se calcule el promedio y evalúe el resultado, teniendo como condición que si la
+nota del alumno es igual o mayor a 4 el alumno este aprobado y en caso contrario el alumno este reprobado.
+Entrega este resultado de la manera que más le acomode. -->
