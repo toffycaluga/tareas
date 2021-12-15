@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tarea sincronica m2c4</title>
+</head>
+<body>
+	<h1>tarea Sincronica M2C4</h1>
+	<p>
+		ingrese un valos<input type="text" name="valor" id="valor">
+		<button onclick="verificar();">verificar</button>
+	</p>
+	<p id="resp"></p>
+ 	<script type="text/javascript">
+ 		function verificar(){
+ 			let valor=document.getElementById('valor').value;
+ 			valor=parseInt(valor,10);
+ 			if (valor>10 || valor<2){
+ 				document.getElementById('resp').innerHTML="esta dentro de lor parametros";
+ 			}else{
+ 				document.getElementById('resp').innerHTML="esta fuera de lor parametros";
+ 			}
+ 		}
+ 	</script>
+</body>
+</html>
+<!--Clase 04 – M2C4
+Tarea en clase:
+En una nueva página web, implemente un formulario donde se pueda ingresar un valor y luego de
+eso genera una funcionalidad JavaScript la cual usando una condicional y el conector lógico “ó”,
+evalué el valor ingresado y determina si cumple alguna de las siguientes condiciones.
+El valor ingresado debe ser mayor que 10 ó menor que 2-->
