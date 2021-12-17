@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta viewport="width-device-width,initial-scale-1">
+	<title>tarea sincronica m2c5</title>
+</head>
+<body>
+	<h1>Tablas de multiplicar</h1>
+	<button onclick="calcular()">comenzar</button>
+
+	<script type="text/javascript">
+		function calcular(){
+			let v1=parseInt(prompt('ingrese un valor:'));
+		let res=0;	
+		for (let cont=1; cont<13;cont++){
+			res=res+v1;
+			document.write( v1+' x '+cont+' = '+res+'<br>');
+			}
+		}
+	</script>
+</body>
+</html>
+<!--Ejercicio clase 05 – M2C5
+Tarea en clase:
+En una nueva página web, implemente un formulario donde se pueda ingresar un valor y luego de eso genera
+una funcionalidad JavaScript la cual usando todos los bucles explicados en la clase entregue la tabla de
+multiplicar de ese número. -->
