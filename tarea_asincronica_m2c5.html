@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<h1>mutiplicacion</h1>
+	<button onclick="calcular();">comenzar</button>
+	<script type="text/javascript">
+		function calcular(){
+			let v1=parseInt(prompt('ingrese un valor:'));
+			let v2=parseInt(prompt('ingrese un valor:'));
+			let res=0;	
+			for (let cont=0; cont<v1;cont++){
+				res=res+v2;
+			}
+			document.write('el resultado de '+v1+' x '+v2+' es  '+res);
+		}
+	</script>
+</body>
+</html>
+<!--Ejercicio clase 05 – M2C5
+Tarea asincrónica:
+En una nueva página web, implemente un formulario donde se pueda ingresar 2 valores y luego de eso
+genera una funcionalidad JavaScript la cual usando bucles y solo aplicando sumas entregue el resultado de la
+multiplicación de estos dos números.
+Ejemplo
+4+4 2 veces 4
+2X4≡
+2+2+2+2 4 veces 2 -->
