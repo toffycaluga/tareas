@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>tare sincronica m2c8</title>
+</head>	
+<body>
+	<h1>m2c8</h1>
+	ingrese un valor<input type="text" name="valor" id="valor"><br>
+	<button onclick="calcular();">calcular iva</button><br>
+	<p id="resp"></p>
+	<script type="text/javascript">
+	
+		function calcular(){
+			let v1=document.getElementById('valor').value;
+			document.getElementById('resp').innerHTML=iva(v1);
+		}
+		function iva(v1){
+
+			let res=parseInt(v1)*0.19;
+			let res2=parseInt(v1)*1.19;
+			let respuesta="iva: "+res+"<br>valor total :"+res2;
+			return respuesta;
+
+
+		}
+	</script>
+</body>
+</html>
+<!--Ejercicio clase 08 – M2C8
+Tarea en clase:
+En una nueva página web, implemente un formulario donde se pueda ingresar un valor y luego de eso genera
+una funcionalidad JavaScript la cual usando Funciones le pasemos el monto bruto y esta función nos retorne
+el valor a pagar con el IVA agregado, entregue esta información al usuario de la manera que usted estime
+conveniente.-->
