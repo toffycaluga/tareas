@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tearea asincronica m2c6</title>
+</head>
+<body>
+	<h1>encontrar nombre en arreglo</h1>
+	<p>
+		ingresa nombre<input type="text" name="nombre" id="nombre"><br>
+		<button onclick="agregar();">agregar a lista</button>
+	</p>
+	<p id="res"></p>
+	<p id="lista"></p>
+	<script type="text/javascript">
+		var nomina[];
+		function agregar(){
+            let v1=parseInt(document.getElementById("nombre").value);
+            nomina.push(v1);
+            document.getElementById("nombre").value="";
+            mostrar();
+        }
+
+        function mostrar(){
+            let fragmento="";
+            fragmento="<table border='1'>";
+            for (var i = 0; i < nomina.length; i++) {
+                fragmento+="<tr><td>"+i+" - "+nomina[i]+"</td></tr>";
+            }
+            fragmento+="</table>";
+            document.getElementById('lista').innerHTML=fragmento;
+        }
+	</script>
+
+</body>
+</html>
+<!-- Ejercicio clase 06 – M2C6
+Tarea asincrónica:
+En una nueva página web, implemente un formulario donde se pueda ingresar un nombre por vez y luego de
+eso genera una funcionalidad JavaScript la cual usando arreglos nos permita ingresar 10 nombres. Una vez
+terminado el ingreso de esos nombres, en otro formulario dentro de la misma página, implementemos el
+ingreso de un nombre a buscar, dentro de nuestro arreglo, este formulario invocará una función JavaScript la
+cual nos dirá si existe ese nombre en nuestro arreglo o no. Implemente la entrega del resultado de la manera
+que estime conveniente-->
