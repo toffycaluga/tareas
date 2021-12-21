@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>buscar el menor</title>
+</head>
+<body>
+    <h1>buscar el menor</h1>
+    <br>
+    ingrese valor:<input type="text" name="num" id="num"><br>
+    <button onclick="agregar();">agregar</button><br>
+    <button onclick="orden();">ordenar</button><br>
+    <button onclick="buscaMenor();">buscar menor</button><br>
+    <span id="res"></span><br>
+    <p id="lista"></p>
+
+    <script type="text/javascript">
+        let nomina=[];
+        function buscaMenor(){
+            let menor=parseInt(nomina[0]);
+            for (var i = 1; i <nomina.length; i++) {
+                if(menor>parseInt(nomina[i])){
+                    menor=parseInt(nomina[i]);
+                }
+            }
+            document.getElementById("res").innerHTML="el numero menor es: "+menor;
+        }
+        function orden(){
+            nomina.sort();
+            mostrar();
+        }
+
+        function agregar(){
+            let v1=parseInt(document.getElementById("num").value);
+            nomina.push(v1);
+            document.getElementById("num").value="";
+            mostrar();
+        }
+
+        function mostrar(){
+            let fragmento="";
+            fragmento="<table border='1'>";
+            for (var i = 0; i < nomina.length; i++) {
+                fragmento+="<tr><td>"+i+" - "+nomina[i]+"</td></tr>";
+            }
+            fragmento+="</table>";
+            document.getElementById('lista').innerHTML=fragmento;
+        }
+    </script>
+</body>
+</html>
+<!-- Ejercicio clase 06 – M2C6
+Tarea en clase:
+En una nueva página web, implemente un formulario donde se pueda ingresar un valor por vez y luego de
+eso genera una funcionalidad JavaScript la cual usando arreglos nos permita ingresar 10 valores, una vez
+terminado ese ingreso nos entrega como resultado, cual es el número menor. Implemente la entrega del
+resultado de la manera que estime convenien-->
