@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button onclick="calcular();">calcular
+	</button>
+	<script type="text/javascript">
+		function calcular(){
+            let th=0,tm=0,ch=0,cm=0;
+            let op="s";
+            while(op=="s"){
+                let t=parseInt(prompt("ingrese tiempo del competidor: "));
+                let s=prompt("ingrese sexo del competidor (H= hombres // M=mujeres):");
+                if(s=="m" | | s=="M"){
+                    tm=tm+t;
+                    cm++;
+                }else if (s=="h" | | s=="H"){
+                    th=th+t;
+                    ch++;
+                }else{
+                    alert("opcion no valida intentelo nuevamente...!!!!")
+                }
+                op=prompt("desea ingresar otro registro(s/n): ");
+            }
+            let pm=tm/cm;
+            let ph=th/ch;
+            document.write("promedio de tiempo de mujeres: "+pm+"<br>");
+            document.write("promedio de tiempo de hombres: "+ph+"<br>");
+            document.write("cm: "+cm+" // "+tm+"<br>");
+            document.write("cm: "+ch+" // "+th+"<br>");
+}
+	</script>
+</body>
+</html>
