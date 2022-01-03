@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Tarea Sincronica M3C1</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    
+</head>
+<body>
+    <h1>Tarea Sincronica M3C1</h1>
+    <table>
+        <tr>
+            <td>Nombre:</td>
+            <td><input type="text" name="nom" id="nom">  </td>
+        </tr>
+        <tr>
+            <td>Año</td>
+            <td><input type="text" name="year" id="year"></td>
+        </tr>
+        <tr>
+            <td>Fabricante</td>
+            <td><input type="text" name="fab" id="fab"></td>
+        </tr>
+        <tr>
+            <td>valor :</td>
+            <td>$<input type="text" name="valor" id="valor"></td>
+        </tr>
+        <tr>
+            <td><button onclick="ingresar();">ingresar</button></td>
+        </tr>
+    </table>
+    <p id="demo"></p>
+    <script>
+        class elemento{
+            constructor(nombre,year,fab,valor){
+                this.nombre=nombre;
+                this.year=year;
+                this.fab=fab;
+                this.valor=valor;
+            }
+            suma(){
+                let ag=this.nombre+" - "+this.year+" - "+this.fab+" - "+this.valor;
+                return ag;
+            }
+        }
+        function ingresar(){
+            let no=document.getElementById('nom').value;
+            let ye=document.getElementById('year').value;
+            let fa=document.getElementById('fab').value;
+            let va=document.getElementById('valor').value;
+            var auto=new elemento(no,ye,fa,va);
+            let res=auto.suma();
+            document.getElementById("demo").innerHTML=res;
+        }
+
+    </script>
+</body>
+</html>
+<!--Ejercicio clase 01 – M3C1
+Tarea en clase:
+Implemente una clase de tipo producto donde contenga los siguientes atributos:
+• Nombre
+• Año
+• Fabricante
+• Valor
+Luego implemente input para el ingreso de los datos con los cuales construirá un objeto a partir de la clase
+antes mencionada, una vez llena la clase implemente un método mostrar los datos en un contenedor de
+código y muestre estos datos de la forma que usted estime convenient-->
