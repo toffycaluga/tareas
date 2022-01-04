@@ -18,30 +18,30 @@
 
     <script type="text/javascript">
         function validar(){
-                    let v1=document.getElementById("nombre").value;
-                    let v2=document.getElementById("edad").value;
-                    let v3=document.getElementById("mail").value;
-                    let vv1 = (v1);
-                    let vv2 = parseInt(v2);
-                    let vv3 = (v3);
+            let v1=document.getElementById("nombre").value;
+            let v2=document.getElementById("edad").value;
+            let v3=document.getElementById("mail").value;
+            let vv1 = (v1);
+            let vv2 = parseInt(v2);
+            let vv3 = (v3);
 
-                        try{
-                            if (vv1=="" || vv1 <0)
-                                throw ("Nombre vacio");
-                            if (isNaN(vv2)){
-                                throw ("No es numero .....!!!!");
-                            }
-                            if (vv3==""){
-                                throw ("Ingrese correo.  !!!!");
-                            }
-                            document.getElementById("resultado").innerHTML = vv1;
-                            document.getElementById("resultado2").innerHTML = vv2;
-                            document.getElementById("resultado3").innerHTML = vv3;
+            try{
+                if (vv1=="" || vv1 <0)
+                    throw ("Nombre vacio");
+                if (isNaN(vv2)){
+                    throw ("No es numero .....!!!!");
+                }
+                if (vv3==""){
+                    throw ("Ingrese correo.  !!!!");
+                }
+                document.getElementById("resultado").innerHTML = vv1;
+                document.getElementById("resultado2").innerHTML = vv2;
+                document.getElementById("resultado3").innerHTML = vv3;
 
-                            } catch (err){
-                            alert("error:   " + err);
+                } catch (err){
+                alert("error:   " + err);
 
-                            }
+                }
         }
     </script>
     
