@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarea m3c2</title>
+</head>
+<body>
+    <h1>tarea sincronica m3c2</h1>
+    <button onclick="mostrar();">pagina 1</button>
+    <button onclick="motrar2();">pagina 2</button>
+    <p id="demo1"></p><br>
+    <p id="demo2"></p><br>
+
+    <script type="text/JavaScript">
+
+        async function getFile1(){
+            let promesa=new Promise(function(resolve){
+                let req=new XMLHttpRequest();
+                req.open('GET','m3c2_img.html');
+                req.onload=function(){
+                    if(req.status==200){
+                        resolve(req.response);
+                    }else{
+                        resolve("error, file not found");
+                    }
+                };
+                req.send();
+            });
+            return document.getElementById('demo1').innerHTML=await promesa;
+        }
+        async function getFile2(){
+            let promesa2=new Promise(function(resolve){
+                let req=new XMLHttpRequest();
+                req.open('GET','m3c2_texto.html');
+                req.onload=function(){
+                    if(req.status==200){
+                        resolve(req.response);
+                    }else{
+                        resolve("error, file not found");
+                    }
+                };
+                req.send();
+            });
+            return document.getElementById('demo2').innerHTML=await promesa2;
+        }
+        function mostrar() {
+            getFile1();
+            
+        }
+        function motrar2() {
+            getFile2();
+            
+        }
+
+    </script>
+</body>
+</html>
+<!--Ejercicio clase 02 – M3C2
+Tarea en clase:
+Implemente una página web donde usted agregue 2 botones y 2 etiquetas de párrafo con si “id”
+correspondiente las cuales se encuentren vacias, además considere la implementación de otras 2 páginas webs
+pequeñas donde solo implemente una foto y un párrafo relacionado con la imagen sin ningún tipo de
+implementación de tipo JavaScript.
+Una vez implementado todo esto a la primera página, la cual se le implementaron 2 botones, se le agregaran
+las funcionalidades necesarias para que al presionar un botón este traiga una de esas páginas y el contenido
+de estas se muestre en uno de los párrafos anteriormente implementados y el otro botón traiga la otra página
+al otro párrafo implementado para esta funcionalidad-->
