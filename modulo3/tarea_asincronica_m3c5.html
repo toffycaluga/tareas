@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>tarea tarea_asincronica_m3c5</h1>
+    nombre: <input type="text" name="nombre" id="nombre"><br>
+    valor unitario: <input type="text" name="valor" id="valor"><br>
+    cantidad <input type="text" name="cant" id="cant">
+    <button onclick="validar();">validar</button>
+    <p id="respuesta"></p>
+    <p id="respuesta2"></p>
+    <p id="respuesta3"></p>
+
+    <script type="text/javascript">
+        function validar(){
+            let no=document.getElementById('nombre').value;
+            let va=document.getElementById('valor').value;
+            let ca=document.getElementById('cant').value;
+            let vv1 = (no);
+            let vv2 = parseInt(va);
+            let vv3 = parseInt(ca);
+
+            try{
+                if (vv1=="" || vv1 <0)
+                    throw ("Nombre vacio");
+                if (isNaN(vv2)){
+                    throw ("ingrese valor en numero .....!!!!");
+                }
+                if (isNaN(vv3)){
+                    throw ("ingrese cantidad en numero !!!!");
+                }
+                document.getElementById("respuesta").innerHTML = vv1;
+                document.getElementById("respuesta2").innerHTML = vv2;
+                document.getElementById("respuesta3").innerHTML = vv3;
+
+                } catch (err){
+                alert("error:   " + err);
+
+                }
+
+
+
+        }
+    </script>
+    
+</body>
+</html>
+<!--Tarea asincrónica:
+Implemente un formulario de ingreso de datos donde se ingresen datos de pedido de un
+producto donde se controle los datos de ingreso y se valide que los datos estén en el
+formato adecuado para realizar el calculo del total del pedido del producto.
+Datos del producto:
+● Nombre
+● Valor unitario
+● Cantidad
+Implemente validación de los datos usando Finally para limpiar los input.-->
