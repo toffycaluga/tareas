@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarea sicronica m3c5</title>
+</head>
+<body>
+    <h1>tarea sincronica</h1>
+    Nombre : <input type="text" name="nombre" id="nombre"><br>
+    Edad : <input type="text" name="edad" id="edad"><br>
+    E-mail : <input type="text" name="mail" id="mail"><br>
+    <button onclick="validar();">validar</button>
+    <p id="resultado"></p>
+    <p id="resultado2"></p>
+    <p id="resultado3"></p>
+
+    <script type="text/javascript">
+        function validar(){
+                    let v1=document.getElementById("nombre").value;
+                    let v2=document.getElementById("edad").value;
+                    let v3=document.getElementById("mail").value;
+                    let vv1 = (v1);
+                    let vv2 = parseInt(v2);
+                    let vv3 = (v3);
+
+                        try{
+                            if (vv1=="" || vv1 <0)
+                                throw ("Nombre vacio");
+                            if (isNaN(vv2)){
+                                throw ("No es numero .....!!!!");
+                            }
+                            if (vv3==""){
+                                throw ("Ingrese correo.  !!!!");
+                            }
+                            document.getElementById("resultado").innerHTML = vv1;
+                            document.getElementById("resultado2").innerHTML = vv2;
+                            document.getElementById("resultado3").innerHTML = vv3;
+
+                            } catch (err){
+                            alert("error:   " + err);
+
+                            }
+        }
+    </script>
+    
+</body>
+</html>
+<!--Tarea en clase:
+Implemente una pagina web donde se genere la entrada de datos de una persona:
+● nombre
+● edad
+● E-mail
+Implemente una funcionalidad e y valide los datos haciendo parseo de datos a la edad y controle los
+errores con try Catch para la validación de los datos-->
