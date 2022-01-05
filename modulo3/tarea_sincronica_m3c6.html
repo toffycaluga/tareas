@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarea sincronica m3c6</title>
+</head>
+<body>
+    <h1>tarea sincronica m3c6</h1>
+    <button onclick="sincronica();">cargar sincronica</button> <button onclick="asincronica();">carga asincronica</button>
+    <p id="demo"></p><br>
+    <br><br><br>
+    asincronico <br>
+    <p id="demo3"></p>
+
+    <script type="text/javascript"> 
+        function asincronica(){
+            var req=new XMLHttpRequest();
+            req.open("GET","suma_m3c6.html",true);
+            req.onreadystatechange=function(aEvt){
+                if(req.readyState==4){
+                    if(req.status==200){
+                        document.getElementById('demo3').innerHTML=req.responseText;
+                    }
+                    
+                }
+            };
+
+            
+            req.send(null);
+
+        }
+        function sincronica(){
+            var req=new XMLHttpRequest();
+            req.open("GET","suma_m3c6.html",false);
+            req.send(null);
+            if(req.status==200){
+                document.getElementById('demo').innerHTML=req.responseText;
+            }
+        }
+
+       
+
+        function calcular() {
+            let v1=parseInt(document.getElementById('v1').value);
+            let v2=parseInt(document.getElementById('v2').value);
+            let resp=v1+v2;
+            document.getElementById('demo2').innerHTML="el resultado es :"+resp;
+        }
+
+    </script>
+    
+</body>
+</html>
+<!--Tarea en clase:
+Implemente la función de tipo rest donde se muestre el contenido de otra pagina 
+la cual tengo una
+función java script para calcular la suma de 2 valores y evalué 
+con postmat el resultado-->
