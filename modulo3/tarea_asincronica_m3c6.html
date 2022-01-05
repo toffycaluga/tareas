@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarea asincronica m3c6</title>
+</head>
+<body>
+    <h1>tarea asincronica m3c6</h1>
+    <button onclick="sincronica();">cargar sincronica</button>
+    <br><br>
+    <p id="demo"></p>
+    
+    <script type="text/javascript">
+        function sincronica(){
+            var req=new XMLHttpRequest();
+            req.open("GET","form_iva.html",false);
+            req.send(null);
+            if(req.status==200){
+                document.getElementById('demo').innerHTML=req.responseText;
+            }
+        }
+        function calcular() {
+            let v1=parseInt(document.getElementById('valor').value);
+            let siva=v1*0.19;
+            let miva=v1*1.19;
+            let res="iva : "+  siva +"<br> Total mas iva : " + miva;
+            document.getElementById('resp').innerHTML=res;
+        }
+    </script>
+
+    
+</body>
+</html>
+<!--Tarea asincrónica:
+Genere una pagina web donde se implemente un llamado mediante una función de tipo rest
+donde el llamado se realice a otra pagina y esta cuente con un formulario y las punciones
+para el calculo del iva de un monto a ingresa-->
