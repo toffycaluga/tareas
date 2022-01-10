@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarea tarea_asincronica_m3c7</title>
+</head>
+<body>
+    <h1>tarea asincronica m3c7</h1>
+    nombre : <input type="text" name="name" id="name"><br>
+    rut :    <input type="text" name="rut" id="rut"><br>
+    e-mail : <input type="text" name="mail" id="mail"><br>
+    fono :   <input type="text" name="fono" id="fono"><br>
+    <button onclick="guardar();">guardar</button>
+
+    <script type="text/javascript">
+        function myobja(nom,rut,mail,fono){
+            this.nom=nom;
+            this.rut=rut;
+            this.mail=mail;
+            this.fono=fono;
+        }
+        function guardar(){
+            let no=document.getElementById('name').value;
+            let ru=document.getElementById('rut').value;   
+            let mail=document.getElementById('mail').value;
+            let fo=document.getElementById('fono').value;
+            let myobj=new myobja(no,ru,mail,fo);
+            const myjson=JSON.stringify(myobj);
+            window.location="guardar_formulario.html?x="+myjson;
+
+        }
+    
+
+    </script>
+
+</body>
+</html>
+<!--
+    Tarea asincrónica:
+Implemente una página web donde implemente un formulario de ingreso de datos de una
+persona(nombre, rut, e-mail, fono) y estos datos sean enviados al servidor mediante json
+-->
