@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarea asincronica m3c9</title>
+</head>
+<body>
+    <h1>tarea asincronica m3c9</h1>
+    <p>
+        nombre : <input type="text" name="name" id="name"><br>
+        valor unidad : <input type="text" name="valor" id="val"><br>
+        Cantidad: <input type="text" name="cantidad" id="cant"><br>
+        <button onclick="ingresar();">ingresar</button><br>
+        buscar producto: <input type="text" name="buscar" id="buscar">
+        <button onclick="buscar();">buscar</button>
+
+    </p>
+
+    <p id="demo"></p>
+    <p id="muestra"></p>
+    <script type="text/javascript">
+        lista=[];
+        function producto(nombre,valor,cantidad){
+            this.nombre=nombre;
+            this.valor=valor;
+            this.cantidad=cantidad;
+        }
+        function ingresar(){
+            let no=document.getElementById('name').value;
+			let ca=document.getElementById('cant').value;
+			let vu=document.getElementById('val').value;
+			let ele=new producto(no,vu,ca);
+			lista.push(ele);
+			limpiar();
+			mostrar();
+            
+        }
+        function buscar(){
+            let buscar=document.getElementById('buscar').value;
+            let aux=false;
+            for (var j=0;j<lista.length;j++){
+                if(lista[j].nombre == buscar){
+                    aux=true;
+                    j=j+100;
+                }
+            
+
+            }
+            if(aux){
+                document.getElementById('demo').innerHTML="existe elemento";
+            }else{
+                document.getElementById('demo').innerHTML="no existe elemento";
+            }  
+            }
+        function mostrar(){
+			let contenido="<table border='1'>";
+			contenido+="<tr><td>nombre</td><td>cantidad</td><td>valor UN</td></tr>";
+			for (var i = 0; i <lista.length; i++) {
+				contenido+=  "<tr><td>"+lista[i].nombre+
+							"</td><td>"+lista[i].cantidad+
+							"</td><td>"+lista[i].valor+
+
+							"</td></tr>";
+			}
+			contenido+="</table>";
+			document.getElementById('muestra').innerHTML=contenido;
+		}
+        function limpiar(){
+			document.getElementById('name').value="";
+			document.getElementById('cant').value="";
+			document.getElementById('val').value="";
+			document.getElementById('name').focus();
+		}
+    </script>
+</body>
+</html>
+<!--
+    Tarea asincrónica:
+Genere una página web donde implemente un ingreso de productos con los siguientes datos:
+• Nombre
+• Valor un
+• Cantidad
+Una vez implementado el ingreso pinchando en el botón llame a la acción que agregue ese
+elemento a una colección de datos, y posteriormente implemente una función de búsqueda de
+productos donde se ingrese un nombre a buscar y al hacer click en el botón buscar, este llame a una
+función la cual nos indique si existe ese producto o no
+-->
