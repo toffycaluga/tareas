@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarea sincronica m3c8</title>
+</head>
+<body>
+    <h1>tarea sincronica m3c8</h1>
+    nombre : <input type="text" name="name" id="name"><br>
+    edad :   <input type="text" name="edad" id="edad"><br>
+    profesion: <input type="text" name="prof" id="prof"><br>
+    <button onclick="ingresar();">ingresar</button><br>
+    <button onclick="agregar();">agregar mail</button>
+
+    <p id="muestra"></p>
+
+
+    <script type="text/javascript">
+        let  lista=[];
+        let x=0;
+        function obj(nombre,edad,profesion){
+            this.nombre=nombre;
+            this.edad=edad;
+            this.profesion=profesion;
+
+        }
+        function ingresar(){
+			let no=document.getElementById('name').value;
+			let ed=document.getElementById('edad').value;
+			let pr=document.getElementById('prof').value;
+			let ele=new obj(no,ed,pr);
+			lista.push(ele);
+			limpiar();
+			mostrar();
+            cont();
+		}
+        function cont(){
+            x=x+1;
+            return x;
+        }
+        function limpiar(){
+			document.getElementById('name').value="";
+			document.getElementById('edad').value="";
+			document.getElementById('prof').value="";
+			document.getElementById('name').focus();
+		}
+
+        function agregar(){
+			let em=prompt("Ingrese e-mail: ");
+			lista[cont()].email=em;
+			document.getElementById('nom').focus();
+			let contenido="<table border='1'>";
+			contenido+="<tr><td>nombre</td><td>edad</td><td>profesion</td><td>e-mail</td></tr>";
+			for (var i = 0; i <lista.length; i++) {
+				contenido+=  "<tr><td>"+lista[i].nombre+
+							"</td><td>"+lista[i].edad+
+							"</td><td>"+lista[i].profesion+
+							"</td><td>"+lista[i].email+
+							"</td></tr>";
+			}
+            contenido+="</table>";
+			document.getElementById('muestra').innerHTML=contenido;
+        }
+
+
+        /*function agregar() {
+            obj.prototype.mail;
+            lista[cont()].mail=prompt("ingrese un mail");
+            console.log(lista[cont()].mail);
+            
+            
+        }*/
+        function mostrar() {
+            let parrafo= "<table border=1>";
+            parrafo+="<tr><td>nombre</td><td>edad</td><td>profesion</td></tr>";
+            for(i=0;i<lista.length;i++){
+                parrafo+="<tr><td>"+lista[i].nombre+"</td><td>"+
+                        lista[i].edad+"</td><td>"+lista[i].profesion+"</td></tr>"
+            }
+            parrafo+="</table>"
+            document.getElementById('muestra').innerHTML=parrafo;
+        }
+    </script>
+
+
+</body>
+</html>
+<!--Tarea en clase:
+Desarrolle una página web donde se ingresen datos de una persona (nombre, edad,
+profesión)y llene el objeto y posteriormente le agregue un atributo extra (mail)-->
