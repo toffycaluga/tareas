@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>tarea sincronica m3c7</h1>
+    <button onclick="cargar();">cargar formulario</button>
+    <p id="demo"></p>
+
+    <script type="text/javascript">
+        function cargar(){
+            var req=new XMLHttpRequest();
+            req.open("GET","form_m3c7.html",false);
+            req.send(null);
+            if(req.status==200){
+                document.getElementById('demo').innerHTML=req.responseText;
+            }
+        }
+        function guardar(){
+            const req=new XMLHttpRequest();
+        req.onload=function(){
+            const myobj=JSON.parse(this.responseText);
+            document.getElementById('nombre').value=myobj[0].nombre;
+            document.getElementById('edad').value=myobj[0].edad;
+        };
+        req.open("GET","carga.json");
+        req.send();
+        }
+        
+    </script>
+</body>
+</html>
+<!--Tarea en clase:
+Genere una página web donde mediante un botón llame a una función java la cual cargue
+los datos en un formulario, donde los datos obtenidos sean extraídos mediante json desde
+otro archivo.-->
