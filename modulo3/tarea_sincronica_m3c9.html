@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarea sincronica m3c9</title>
+</head>
+<body>
+    <h1>tarea sincronica m3c9</h1>
+    <p>
+        ingrese un numero : <input type="text" name="valor" id="val"><br>
+        <button onclick="verificar();">verificar</button>
+    </p>
+    <p id="demo"></p>
+    <script type="text/javascript">
+        function verificar(){
+            let va=parseInt(document.getElementById('val').value);
+            let estado=true;
+            for (var j=2;j<va;j++){
+                let res=va%j;
+                if(res==0){
+                    estado=false;
+                }
+                
+            }
+            if(estado==true){
+                document.getElementById('demo').innerHTML="es un numero primo";
+            }else {
+                document.getElementById('demo').innerHTML="no es un numero primo";
+            }
+        
+        }
+    </script>
+</body>
+
+</html>
+<!--
+    Ejercicio clase 09 – M3C9
+Tarea en clase:
+Genere una página web donde se implemente un ingreso de un número y este no indique si el número es
+primo o no
+-->
